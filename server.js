@@ -12,6 +12,7 @@ app.set("layout", "layouts/layout");
 app.use(expressLayouts);
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ limit: "10mb", extended: false }));
+app.use(express.urlencoded({ extended: false }));
 app.use((req, res, next) => {
   res.locals.errorMessage = null;
   next();
@@ -19,9 +20,11 @@ app.use((req, res, next) => {
 
 const indexRouter = require("./routes/index");
 const authorsRouter = require("./routes/authors");
+const booksRouter = require("./routes/books");
 
 app.use("/", indexRouter);
 app.use("/authors", authorsRouter);
+app.use("/books", booksRouter);
 
 const PORT = process.env.PORT;
 
