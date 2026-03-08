@@ -4,9 +4,11 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const expressLayouts = require("express-ejs-layouts");
-const bodyParser = require("body-parser");
+// const bodyParser = require("body-parser");
+const methodOverride = require("method-override");
 
 app.set("view engine", "ejs");
+app.use(methodOverride("_method"));
 app.set("views", __dirname + "/views");
 app.set("layout", "layouts/layout");
 app.use(expressLayouts);

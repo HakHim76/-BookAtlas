@@ -1,0 +1,6 @@
+<h1>Update Author</h1>
+<form action="/authors/<%= author.id %>?_method=PUT" method="POST">
+  <%- include("_formFields.ejs") %>
+  <a href="/authors">Cancel</a>
+  <button type="submit">Update</button>
+</form>
