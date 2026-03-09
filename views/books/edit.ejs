@@ -1,0 +1,6 @@
+<h1>Update Book</h1>
+<form action="/books/<%= book.id %>?_method=PATCH" method="POST">
+  <%- include("_formFields.ejs") %>
+  <a href="/books">Cancel</a>
+  <button type="submit">Update</button>
+</form>
