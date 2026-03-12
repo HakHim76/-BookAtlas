@@ -27,14 +27,18 @@
     ></script>
     <script defer src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
     <script defer src="/javascripts/fileUpload.js"></script>
+
     <link rel="stylesheet" href="/stylesheets/main.css" />
 
     <title>BookAtlas</title>
   </head>
   <body>
-    <section>
-      <%- include("../partials/headers.ejs") %> <%-
-      include("../partials/errorMessage.ejs") %> <%- body %>
-    </section>
+    <div class="page-shell">
+      <div class="app-container">
+        <%- include("../partials/headers.ejs") %> <%-
+        include("../partials/errorMessage.ejs") %>
+        <main class="page-content"><%- body %></main>
+      </div>
+    </div>
   </body>
 </html>

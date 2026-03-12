@@ -1,8 +1,10 @@
-<h1>Add Book</h1>
+<h1 class="page-title">Add Book</h1>
 
-<form action="/books" method="POST">
+<form action="/books" method="POST" class="book-form">
   <%- include("_formFields.ejs") %>
-  <br />
-  <a href="/books">Cancel</a>
-  <button type="submit">Add</button>
+
+  <div class="form-actions">
+    <a class="btn-secondary" href="/books">Cancel</a>
+    <button class="btn-primary" type="submit">Add</button>
+  </div>
 </form>

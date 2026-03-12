@@ -1,7 +1,8 @@
-<h1>Search Books</h1>
+<h1 class="page-title">Search Books</h1>
 
-<form action="/books" method="GET">
-  <div>
+<form action="/books" method="GET" class="search-form">
+
+  <div class="form-group">
     <label for="title">Name</label>
     <input
       type="text"
@@ -11,7 +12,7 @@
     />
   </div>
 
-  <div>
+  <div class="form-group">
     <label for="publishedBefore">Published Before</label>
     <input
       type="date"
@@ -21,7 +22,7 @@
     />
   </div>
 
-  <div>
+  <div class="form-group">
     <label for="publishedAfter">Published After</label>
     <input
       type="date"
@@ -31,13 +32,22 @@
     />
   </div>
 
-  <button type="submit">Search</button>
+  <button class="btn-primary" type="submit">Search</button>
+
 </form>
 
-<div>
+
+<div class="books-showcase">
+
   <% books.forEach(book => { %>
-    <a href="/books/<%= book.id %>">
-      <img height="150" width="100" src="<%= book.coverImagePath %>">
+
+    <a href="/books/<%= book.id %>" class="book-card">
+      <img
+        src="<%= book.coverImagePath %>"
+        class="book-cover"
+      >
     </a>
+
   <% }) %>
+
 </div>

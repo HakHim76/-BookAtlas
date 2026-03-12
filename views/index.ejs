@@ -1,8 +1,21 @@
-<h1>Recently Added </h1>
-<div>
-  <% books.forEach(book => { %>
-    <a href="/books/<%= book.id %>">
-    <img height="150" width="100" src="<%= book.coverImagePath %>">
-    </a>
-  <% }) %>
-</div>
+<section class="home-section">
+  <div class="home-hero">
+    <p class="hero-kicker">BookAtlas Collection</p>
+    <h1 class="page-title">Recently Added</h1>
+    <p class="page-subtitle">
+     The newest books in our library.
+    </p>
+  </div>
+
+  <div class="books-showcase">
+    <% books.forEach(book => { %>
+      <a href="/books/<%= book.id %>" class="book-card">
+        <img
+          src="<%= book.coverImagePath %>"
+          alt="<%= book.title %>"
+          class="book-cover"
+        >
+      </a>
+    <% }) %>
+  </div>
+</section>
