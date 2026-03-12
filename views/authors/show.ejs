@@ -1,12 +1,29 @@
-<h2><%= author.name %></h2>
-<a href="/authors/<%= author.id %>/edit">Edit</a>
-<%- include('../partials/delete_Form',
-            { url: `/authors/${author.id}` }) %>
-<% if (booksByAuthor.length > 0) { %>
-  <h2>Books By Author</h2>
-  <% booksByAuthor.forEach(book => { %>
-    <a href="/books/<%= book.id %>">
-    <img height="150" width="100" src="<%= book.coverImagePath %>">
-    </a>
-  <% }) %>
-<% } %>
+<div class="author-show">
+  <div class="author-show-header">
+    <h1 class="page-title"><%= author.name %></h1>
+
+    <div class="author-card-actions">
+      <a href="/authors/<%= author.id %>/edit" class="btn-secondary">Edit</a>
+
+      <%- include('../partials/delete_Form', { url: `/authors/${author.id}` }) %>
+    </div>
+  </div>
+
+  <% if (booksByAuthor.length > 0) { %>
+    <section class="author-books-section">
+      <h2 class="section-title">Books By Author</h2>
+
+      <div class="books-showcase">
+        <% booksByAuthor.forEach(book => { %>
+          <a href="/books/<%= book.id %>" class="book-card">
+            <img
+              src="<%= book.coverImagePath %>"
+              alt="<%= book.title %>"
+              class="book-cover"
+            />
+          </a>
+        <% }) %>
+      </div>
+    </section>
+  <% } %>
+</div>

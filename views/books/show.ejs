@@ -14,9 +14,9 @@
 
     <p><strong>Page Count:</strong> <%= book.pageCount %></p>
 
-    <p><strong>Description:</strong></p>
-    <p class="book-description"><%= book.description %></p>
-
+    <p class="book-description">
+  <strong>Description:</strong> <%= book.description %>
+</p>
     <div class="book-actions">
 
       <a class="btn-secondary" href="/books/<%= book.id %>/edit">Edit</a>

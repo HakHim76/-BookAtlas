@@ -1,6 +1,10 @@
-<h1>Add Author</h1>
-<form action="/authors" method="POST">
+<h1 class="page-title">Add Author</h1>
+
+<form action="/authors" method="POST" class="author-form">
   <%- include("_formFields.ejs") %>
-  <a href="/authors">Cancel</a>
-  <button type="submit">Add</button>
+
+  <div class="form-actions">
+    <a href="/authors" class="btn-secondary">Cancel</a>
+    <button type="submit" class="btn-primary">Add</button>
+  </div>
 </form>
